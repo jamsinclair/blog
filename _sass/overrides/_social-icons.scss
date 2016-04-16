@@ -1,0 +1,22 @@
+.social-icons a.fa {
+  &:hover {
+    color: $site-title-color;
+  }
+}
+
+@media screen and (min-width: ($viewport-small + 1)) {
+  .social-icons {
+    padding-top: 0;
+    a {
+      font-size: $social-icons-desktop;
+    }
+  }
+}
+
+@media screen and (max-width: ($viewport-small)) {
+  .social-icons {
+    a {
+      font-size: $social-icons-mobile;
+    }
+  }
+}

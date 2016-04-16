@@ -1,0 +1,19 @@
+.site-header {
+  .site-title {
+    color: $site-title-color;
+    font-family: $heading-font-family;
+    font-weight: 700;
+    font-size: $h2;
+
+    &:hover {
+      color: darken($site-title-color, 15%);
+    }
+  }
+
+  .site-nav a {
+    &:hover {
+      color: $site-title-color;
+      border-bottom-color: $site-title-color;
+    }
+  }
+}
