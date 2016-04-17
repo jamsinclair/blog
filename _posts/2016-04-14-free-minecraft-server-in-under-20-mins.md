@@ -1,7 +1,7 @@
 ---
 layout:  post
 title:   Free Minecraft Server in Under 20 mins
-date:    2016-04-14 22:03
+date:    2016-04-17 16:43
 summary: Time is wasting, let's get that free server setup on an Amazon EC2 Instance!
 categories:
 ---
