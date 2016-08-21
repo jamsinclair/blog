@@ -1,27 +1,37 @@
 ---
 layout:  post
-title:   Free Minecraft Server in Under 20 mins
-date:    2016-04-17 16:43
+title:   Setup a Free AWS Minecraft Server
+date:    2016-08-19 16:43
 summary: Time is wasting, let's get that free server setup on an Amazon EC2 Instance!
 meta_robots: noindex, nofollow
 categories:
 ---
 
-You've got a small group of friends and want to run a small casual server (2-5 people)? Perfect, in 15 mins we can get
-you up and running with a free 24 hr minecraft server. Let's not waste any more time!
+Want to run a small casual minecraft server for your friends? You're a bit of a cheapskate like me?
+
+Perfect. With a little work we can quickly make this a reality!
 
 ## Prerequisites
 - Sign up for a [free AWS account](http://aws.amazon.com/free), we will use this service to run a virtual server.
 You'll need a credit card to sign up, but what's on offer with the _'Free Tier'_ is amazing and you won't be charged
 unless you step over the free tier limits.
 
-- If you're on a windows machine, bad luck, you're going to need to download [PuTTY](http://www.putty.org/). We will
-need this in order to log into our server instance. Linux and Mac users you're fine, the standard terminal will be
-perfect.
+- On a Windows machine? Coolness, you'll need to download [PuTTY](http://www.putty.org/). We will
+need this in order to log into our server instance.
+
+- Use OSX or a Linux Distro? Have your favourite terminal program at the ready.
 
 ## Spawning an instance
 Sign into the [AWS Console](https://console.aws.amazon.com), it is a powerful but scary beast. Navigating the menus and setup is much like playing a game of _'Where's Waldo?'_
 
+Hopefully the below video helps speed you through the process:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/knfAzeU8DOY" frameborder="0" allowfullscreen></iframe>
+
+<p></p>
+<p id="spawn-instance-instructions">
+    <a href="#spawn-instance-instructions" style="cursor: pointer">Show text instructions?</a>
+</p>
 1. Find and click on the __'EC2'__ item on the dashboard.
 
 2. Now in the top right of your screen in the navigation click on the region name. This will display a dropdown with a
@@ -50,12 +60,12 @@ In order to allow yourself and other friends to connect we're going to need to o
 8. Hold on, we're now presented with a prompt asking if we'd like to __'Select an existing or create a new key
 pair?'__, what does that mean you ask?
 
-    Rather than use an username/password setup to log in to the server, AWS by default requires you to setup and
-    download a secure key pair. If you're interested, rather than badly explain it here, jump on over to Reddit's [Explain SSH keys and validation like I'm five?](https://www.reddit.com/r/learnprogramming/comments/1enupy/explain_ssh_keys_and_validation_like_im_five/) thread.
+    Rather than use a username/password setup to log in to the server, AWS by default requires you to setup and
+    download a secure key pair. If you're interested, rather than explain it here, jump on over to Reddit's [Explain SSH keys and validation like I'm five?](https://www.reddit.com/r/learnprogramming/comments/1enupy/explain_ssh_keys_and_validation_like_im_five/) thread.
 
     __tldr;__ It's more secure to use these complex keys to access the server.
 
-    Select __'Create a new key pair'__, give it the name like _'aws-key'_ and download the key pair. Do not lose this!
+    Select __'Create a new key pair'__, give it a name like _'aws-key'_ and download the key pair. Do not lose this!
     You will be unable to download this key again and is required to access your server.
 
 9. Now finally click __'Launch Instance'__ and pat yourself on the back. You've managed to understand my tangled
@@ -78,107 +88,28 @@ Go to the [EC2 Dashboard](https://console.aws.amazon.com/ec2/v2/home), click on 
 one instance show up as running. Click on it and look for the text __'Public DNS'__, it should contain an address like
 `ec2-198-51-100-1.compute-1.amazonaws.com`, copy this down and keep it at the ready.
 
-Right, fire up your terminal.
+![Locate the Public DNS of your EC2 Server instance to connect to it](http://i.imgur.com/PDvtB75.gif?1)
 
-<div class="terminal-wrap">
-    <div class="title-bar"><span class="title">terminal — bash — 80x<span class="terminal-height">20</span></span></div>
-    <div class="text-body">
-    	<span class="text-comment">
-            # We should update the permissions to your key file <br>
-            # so it's not publicly viewable
-        </span>
-        <span class="text-command"><span class="text-prefix">$ </span>chmod 400 ~/.ssh/aws-key.pem</span>
-        <br>
-        <span class="text-comment">
-            # Now we can use the ssh command, your key file and<br>
-            # the server's public DNS to connect to it.<br>
-            # Replace and copy your Public DNS into the following command
-        </span>
-        <span class="text-command">
-            <span class="text-prefix">$</span>
-            ssh -i ~/.ssh/aws-key.pem ec2user@copy-public-dns-here
-        </span>
-        <br>
-        <span class="text-comment">
-            # You'll next see a response like:
-        </span>
-        <span class="text-command">
-            The authenticity of host 'ec2-198-51-100-1.compute-1.amazonaws.com (10.254.142.33)'
-            can't be established.
-            RSA key fingerprint is 1f:51:ae:28:bf:89:e9:d8:1f:25:5d:37:2d:7d:b8:ca:9f:f5:f1:6f.
-            Are you sure you want to continue connecting (yes/no)?
-        </span>
-        <span class="text-comment">
-            # Type yes and we should be then connected to your server!
-        </span>
-        <span class="text-command"><span class="text-prefix">$</span> yes<span class="typed-cursor">|</span></span>
-    </div>
-</div>
+Now that we have your ssh key pair and the public dns, fire up your terminal!
+
+<script type="text/javascript" data-speed="2" src="https://asciinema.org/a/1rzhpnmxbtj1ezp3p9schgecs.js" id="asciicast-1rzhpnmxbtj1ezp3p9schgecs" async></script>
 
 After the first time you'll be able to connect with just the one command like:
 
 `ssh -i ~/.ssh/aws-key.pem ec2user@ec2-198-51-100-1.compute-1.amazonaws.com`
 
-Encountering problems or want more detailed instructions? [See Amazon's overview](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
+Encountering problems or want more detailed instructions? [See Amazon's guide](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
 
 ## Finally let's get that minecraft server up!
 
 Great if you've followed the Windows or Linux/Mac instructions we should be now connected remotely to our virtual server
 and can type commands. Progress.
 
-<div class="terminal-wrap">
-    <div class="title-bar"><span class="title">terminal — bash — 80x<span class="terminal-height">20</span></span></div>
-    <div class="text-body">
-    	<span class="text-comment">
-            # First let's update your server's software. Type:
-        </span>
-        <span class="text-command">
-            <span class="text-prefix">[ec2-user ~] $</span>
-            sudo yum update -y
-        </span>
-        <span class="text-comment">
-            # This will update various software packages on your server.
-        </span>
-        <br>
-        <span class="text-comment">
-            # Next up, we will run a script I've written <br>
-            # to install and setup minecraft for us! <br>
-            # Copy and paste the following command:
-        </span>
-        <span class="text-command">
-            <span class="text-prefix">[ec2-user ~] $</span>
-            wget "https://gist.github.com/jamsinclair/3bf32c1dcf48187a0dfa4d07abab9f81/raw" - O minecraft-setup.sh &&
-            bash minecraft-setup.sh
-        </span>
-        <br>
-        <span class="text-command">
-          Great let's get minecraft setup!<br>
-          Which version of minecraft server do you want to install? e.g. 1.9.2
-        </span>
-        <span class="text-comment">
-            # This will now prompt for which server version you'd like <br>
-            # to install, enter the version you'd like then press enter:
-        </span>
-        <span class="text-command">
-            <span class="text-prefix">[ec2-user ~] $</span>
-            1.9.2
-        </span>
-        <br>
-        <span class="text-comment">
-            # If all goes well you should see the following text:
-        </span>
-        <span class="text-command">
-          Downloading minecraft server version 1.9.2...<br>
-          Minecraft server downloaded successfully!<br>
-          Looks like minecraft is setup correctly and running!<br>
-          Use the Public DNS of your instance for the "Server Address" in your Minecraft Client to play!<br>
-          <br>
-          Public DNS: ec2-198-51-100-1.compute-1.amazonaws.com
-        </span>
-    </div>
-</div>
+<script type="text/javascript" data-speed="1.3" src="https://asciinema.org/a/152oj5te8qxnzsghxkxv7gylr.js" id="asciicast-b6b9x7jjirp6pb6b5iyza0se7" async></script>
 
 Great you can now exit out of the terminal. Relax, log into minecraft and take some time punching wood... or sheep.
+
+![Connect and play around on your now setup minecraft server](http://i.imgur.com/YdHH3E2.gif?1)
 
 __Note 1:__ Running an external script on your server is not advised, unless you trust the author and have read through
 the script. Malicious commands could be run very easily. For those concerned feel free to check [my bash setup script](https://gist.github.com/jamsinclair/3bf32c1dcf48187a0dfa4d07abab9f81).
