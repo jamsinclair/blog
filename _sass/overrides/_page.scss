@@ -4,3 +4,11 @@
   height: auto;
   width: 250px;
 }
+
+#spawn-instance-instructions + ol {
+  display: none;
+}
+
+#spawn-instance-instructions:target + ol {
+  display: block;
+}
