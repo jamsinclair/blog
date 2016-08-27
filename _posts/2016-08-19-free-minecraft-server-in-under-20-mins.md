@@ -1,13 +1,13 @@
 ---
 layout:  post
 title:   Setup a Free AWS Minecraft Server
-date:    2016-08-19 16:43
-summary: Time is wasting, let's get that free server setup on an Amazon EC2 Instance!
+date:    2016-08-27 16:50
+summary: A simple guide to setup an AWS instance and start running your very own Minecraft server from it.
 meta_robots: noindex, nofollow
 categories:
 ---
 
-Want to run a small casual minecraft server for your friends? You're a bit of a cheapskate like me?
+Want to run a small casual minecraft server for your friends? Are you a bit of a cheapskate like me?
 
 Perfect. With a little work we can quickly make this a reality!
 
@@ -88,10 +88,13 @@ Go to the [EC2 Dashboard](https://console.aws.amazon.com/ec2/v2/home), click on 
 one instance show up as running. Click on it and look for the text __'Public DNS'__, it should contain an address like
 `ec2-198-51-100-1.compute-1.amazonaws.com`, copy this down and keep it at the ready.
 
+*The below GIF should show you how to find it in the current interface for AWS:*
+
 ![Locate the Public DNS of your EC2 Server instance to connect to it](http://i.imgur.com/PDvtB75.gif?1)
 
 Now that we have your ssh key pair and the public dns, fire up your terminal!
 
+The following video will walk through how to prepare and connect to your AWS instance from your terminal.
 <script type="text/javascript" data-speed="2" src="https://asciinema.org/a/1rzhpnmxbtj1ezp3p9schgecs.js" id="asciicast-1rzhpnmxbtj1ezp3p9schgecs" async></script>
 
 After the first time you'll be able to connect with just the one command like:
@@ -105,11 +108,21 @@ Encountering problems or want more detailed instructions? [See Amazon's guide](h
 Great if you've followed the Windows or Linux/Mac instructions we should be now connected remotely to our virtual server
 and can type commands. Progress.
 
+Follow along with the video below to get the Minecraft server setup on your amazon instance.
 <script type="text/javascript" data-speed="1.3" src="https://asciinema.org/a/152oj5te8qxnzsghxkxv7gylr.js" id="asciicast-b6b9x7jjirp6pb6b5iyza0se7" async></script>
+
+To run my install script, I use the following command in my video above:
+
+```
+wget "https://gist.github.com/jamsinclair/3bf32c1
+dcf48187a0dfa4d07abab9f81/raw" -O minecraft-setup.sh && bash minecraft-setup.sh
+```
+
+Follow the prompts to install the version of minecraft you want.
 
 Great you can now exit out of the terminal. Relax, log into minecraft and take some time punching wood... or sheep.
 
-![Connect and play around on your now setup minecraft server](http://i.imgur.com/YdHH3E2.gif?1)
+![Connect and play around on your now setup Minecraft server](http://i.imgur.com/YdHH3E2.gif?1)
 
 __Note 1:__ Running an external script on your server is not advised, unless you trust the author and have read through
 the script. Malicious commands could be run very easily. For those concerned feel free to check [my bash setup script](https://gist.github.com/jamsinclair/3bf32c1dcf48187a0dfa4d07abab9f81).
@@ -120,7 +133,7 @@ __Note 2:__ The Public DNS for your server may change from time to time. If you 
 
 I will note the free virtual server we've setup is not that powerful and will support 2-5 players at most. I currently
 have one running with 3 players with only occasional lag and performance problems. If you need something bigger you're
-better off going with a dedicated minecraft server service.
+better off going with a dedicated Minecraft server service.
 
 __Need to stop or start your server?__ There's two ways we can go about this.
 
@@ -141,3 +154,5 @@ To update the minecraft server config, you could use the command `nano ~/minecra
 a special text editor within the terminal ([Tips how to use the editor](http://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)).
 
 Once you've made your desired changes you'll need to restart the minecraft server.
+
+Thanks for following along and I hope this helps someone out there! :)
