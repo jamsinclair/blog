@@ -5,4 +5,4 @@ permalink: /about/
 tags: about
 ---
 
-<img class="about-me-pic" src="/images/me.jpg" alt="James Sinclair, web developer and actor from Auckland New Zealand">
+Hello there, I'm a web developer from New Zealand 🇳🇿. Passionate about the web, theatre and creative technologies. I will be blogging mainly for myself to reinforce what I learn, and if possible educate other people along the way. 😺
