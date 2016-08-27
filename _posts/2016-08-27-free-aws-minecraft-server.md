@@ -114,8 +114,7 @@ Follow along with the video below to get the Minecraft server setup on your amaz
 To run my install script, I use the following command in my video above:
 
 ```
-wget "https://gist.github.com/jamsinclair/3bf32c1
-dcf48187a0dfa4d07abab9f81/raw" -O minecraft-setup.sh && bash minecraft-setup.sh
+wget "https://gist.githubusercontent.com/jamsinclair/3bf32c1dcf48187a0dfa4d07abab9f81/raw" -O minecraft-setup.sh && bash minecraft-setup.sh
 ```
 
 Follow the prompts to install the version of minecraft you want.
