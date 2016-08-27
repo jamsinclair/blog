@@ -2,9 +2,9 @@
 title:       JamSinclair
 email:       jamsinclairnz+blog@gmail.com
 author:      Jamie Sinclair
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "A public place to jot down what I am learning :)"
 baseurl:     ""
-url:         "/"
+url:         "https://http://blog.jamsinclair.co.nz"
 date_format: "%b %-d, %Y"
 
 # Google services
