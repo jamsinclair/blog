@@ -4,7 +4,7 @@ email:       jamsinclairnz+blog@gmail.com
 author:      Jamie Sinclair
 description: "A public place to jot down what I am learning :)"
 baseurl:     ""
-url:         "https://http://blog.jamsinclair.co.nz"
+url:         "https://blog.jamsinclair.co.nz"
 date_format: "%b %-d, %Y"
 
 # Google services
