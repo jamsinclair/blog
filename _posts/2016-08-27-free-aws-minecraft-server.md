@@ -109,7 +109,7 @@ Great if you've followed the Windows or Linux/Mac instructions we should be now 
 and can type commands. Progress.
 
 Follow along with the video below to get the Minecraft server setup on your amazon instance.
-<script type="text/javascript" data-speed="1.3" src="https://asciinema.org/a/152oj5te8qxnzsghxkxv7gylr.js" id="asciicast-b6b9x7jjirp6pb6b5iyza0se7" async></script>
+<script type="text/javascript" data-speed="1.3" src="https://asciinema.org/a/03aygwp83bbzjuv8enm1i24u3.js" id="asciicast-03aygwp83bbzjuv8enm1i24u3" async></script>
 
 To run my install script, I use the following command in my video above:
 
