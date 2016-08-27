@@ -12,7 +12,7 @@ Want to run a small casual minecraft server for your friends? Are you a bit of a
 Perfect. With a little work we can quickly make this a reality!
 
 ## Prerequisites
-- Sign up for a [free AWS account](http://aws.amazon.com/free), we will use this service to run a virtual server.
+- Sign up for a [free AWS account](https://aws.amazon.com/free), we will use this service to run a virtual server.
 You'll need a credit card to sign up, but what's on offer with the _'Free Tier'_ is amazing and you won't be charged
 unless you step over the free tier limits.
 
@@ -75,7 +75,7 @@ instructions and now have your own little virtual server running up there in the
 
 ### On Windows?
 
-Your setup to connect to the server is a little bit tougher, [see Amazon's instructions](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
+Your setup to connect to the server is a little bit tougher, [see Amazon's instructions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
 
 [Skip to Setting Up Minecraft Server](#finally-lets-get-that-minecraft-server-up).
 
@@ -90,7 +90,7 @@ one instance show up as running. Click on it and look for the text __'Public DNS
 
 *The below GIF should show you how to find it in the current interface for AWS:*
 
-![Locate the Public DNS of your EC2 Server instance to connect to it](http://i.imgur.com/PDvtB75.gif?1)
+![Locate the Public DNS of your EC2 Server instance to connect to it](https://i.imgur.com/PDvtB75.gif?1)
 
 Now that we have your ssh key pair and the public dns, fire up your terminal!
 
@@ -101,7 +101,7 @@ After the first time you'll be able to connect with just the one command like:
 
 `ssh -i ~/.ssh/aws-key.pem ec2user@ec2-198-51-100-1.compute-1.amazonaws.com`
 
-Encountering problems or want more detailed instructions? [See Amazon's guide](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
+Encountering problems or want more detailed instructions? [See Amazon's guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
 
 ## Finally let's get that minecraft server up!
 
@@ -122,7 +122,7 @@ Follow the prompts to install the version of minecraft you want.
 
 Great you can now exit out of the terminal. Relax, log into minecraft and take some time punching wood... or sheep.
 
-![Connect and play around on your now setup Minecraft server](http://i.imgur.com/YdHH3E2.gif?1)
+![Connect and play around on your now setup Minecraft server](https://i.imgur.com/YdHH3E2.gif?1)
 
 __Note 1:__ Running an external script on your server is not advised, unless you trust the author and have read through
 the script. Malicious commands could be run very easily. For those concerned feel free to check [my bash setup script](https://gist.github.com/jamsinclair/3bf32c1dcf48187a0dfa4d07abab9f81).
