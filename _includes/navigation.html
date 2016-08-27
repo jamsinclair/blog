@@ -1,4 +1,4 @@
-<a href="{{ site.baseurl }}">Musings</a>
+<a href="{% if site.baseurl == '' %}{{ '/' }}{% else %}{{ site.baseurl }}{% endif %}">Musings</a>
 {% for page in site.pages %}
     {% if page.tags contains "about" %}
         <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
