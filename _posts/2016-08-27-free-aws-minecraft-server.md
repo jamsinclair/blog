@@ -3,6 +3,7 @@ layout:  post
 title:   Setup a Free AWS Minecraft Server
 date:    2016-08-27 16:50
 summary: A simple guide to setup an AWS instance and start running your very own Minecraft server from it.
+description: A simple guide to setup an AWS instance and start running your very own Minecraft server from it.
 categories:
 ---
 
